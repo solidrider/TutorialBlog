@@ -1,6 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from app.app import app
 from datetime import datetime
+from flask_login import UserMixin
+
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:@localhost/tutorial_blog'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -18,7 +21,7 @@ class Content(db.Model):
     def __repr__(self):
         return '<Content %r>' % self.title
 
-class User(db.Model):
+class User(db.Model,UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     hashed_password = db.Column(db.String(100), nullable=False)

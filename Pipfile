@@ -10,6 +10,7 @@ pylint-flask-sqlalchemy = "*"
 pylint-flask = "*"
 psycopg2-binary = "*"
 psycopg2 = "*"
+flask-login = "*"
 
 [dev-packages]
 
